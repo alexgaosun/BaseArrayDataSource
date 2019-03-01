@@ -29,6 +29,7 @@
 		589E32DB2227B6CE00A05BFF /* TestTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32DA2227B6CE00A05BFF /* TestTwoCell.m */; };
 		589E32E12227C61C00A05BFF /* BaseArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E02227C61C00A05BFF /* BaseArrayDataSource.m */; };
 		589E32E42227D47300A05BFF /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E32227D47300A05BFF /* TestModel.m */; };
+		589E32E92229083D00A05BFF /* NSObject+TableCellModeSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		589E32E02227C61C00A05BFF /* BaseArrayDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseArrayDataSource.m; sourceTree = "<group>"; };
 		589E32E22227D47300A05BFF /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		589E32E32227D47300A05BFF /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		589E32E72229083D00A05BFF /* NSObject+TableCellModeSerialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TableCellModeSerialize.h"; sourceTree = "<group>"; };
+		589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TableCellModeSerialize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +243,8 @@
 			children = (
 				589E32E22227D47300A05BFF /* TestModel.h */,
 				589E32E32227D47300A05BFF /* TestModel.m */,
+				589E32E72229083D00A05BFF /* NSObject+TableCellModeSerialize.h */,
+				589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				589E32D12227B4DA00A05BFF /* View+MASAdditions.m in Sources */,
 				589E32E12227C61C00A05BFF /* BaseArrayDataSource.m in Sources */,
 				589E32DB2227B6CE00A05BFF /* TestTwoCell.m in Sources */,
+				589E32E92229083D00A05BFF /* NSObject+TableCellModeSerialize.m in Sources */,
 				589E32CB2227B4DA00A05BFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				589E32E42227D47300A05BFF /* TestModel.m in Sources */,
 				589E32D42227B4DA00A05BFF /* MASViewAttribute.m in Sources */,

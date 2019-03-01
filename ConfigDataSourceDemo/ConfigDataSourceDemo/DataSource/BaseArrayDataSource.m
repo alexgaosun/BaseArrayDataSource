@@ -7,6 +7,7 @@
 //
 
 #import "BaseArrayDataSource.h"
+#import "NSObject+TableCellModeSerialize.h"
 @interface BaseArrayDataSource()
 @property (nonatomic, copy) NSArray *cellIdentifiers;                // 多cell样式选择
 @property (nonatomic, copy) NSArray *items;
@@ -20,7 +21,7 @@
 
 - (id)initWithItems:(NSArray *)items
     cellIdentifiers:(NSArray *)cellIdentifiers
- configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock; {
+ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock{
     
     self = [super init];
     if (self) {
@@ -45,13 +46,11 @@
     UITableViewCell *cell = nil;
     if (self.cellIdentifiers.count) {
         id item = [self itemAtIndexPath:indexPath];
-        if (self.getCellBlock) {
-            cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifiers[self.getCellBlock(item)]];
-        }else{
-            NSLog(@"无此类型Cell");
-           cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([item configCellTypeModel:item])];
+        if (self.configureCellBlock) {
+            self.configureCellBlock(cell, item);
         }
-        self.configureCellBlock(cell, item);
+        
         return cell;
     }else{
         return nil;

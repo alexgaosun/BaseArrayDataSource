@@ -37,23 +37,10 @@
     [_cellIdentifiers addObject:NSStringFromClass([TestTwoCell class])];
     [tableView registerClass:[TestTwoCell class] forCellReuseIdentifier:NSStringFromClass([TestTwoCell class])];
 
-    TableViewCellConfigureBlock configureCell =^(UITableViewCell *cell, NSDictionary *dic) {
+    TableViewCellConfigureBlock configureCell =^(UITableViewCell *cell, id item) {
         
     };
-    GetCellTypeBlock getCellBlock = ^NSInteger(id  _Nonnull item) {
-        NSLog(@"根据模型判断Cell样式");
-        if ([item isKindOfClass:[TestModel class]]) {
-            TestModel *model = item;
-            if (model.type % 2 ==0) {
-                return 1;
-            }else{
-                return 0;
-            }
-        }
-        return 0;
-    };
     self.dateSource  = [[BaseArrayDataSource alloc] initWithItems:self.arr cellIdentifiers:_cellIdentifiers configureCellBlock:configureCell];
-    self.dateSource.getCellBlock = getCellBlock;
     tableView.dataSource = self.dateSource;
     
     // Do any additional setup after loading the view, typically from a nib.

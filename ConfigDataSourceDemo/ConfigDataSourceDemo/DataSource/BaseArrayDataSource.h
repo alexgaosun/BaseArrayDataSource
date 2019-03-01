@@ -23,7 +23,10 @@ typedef NSInteger (^GetCellTypeBlock)(id item);
 - (id)initWithItems:(NSArray *)items
     cellIdentifiers:(NSArray *)cellIdentifiers
  configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
-@property (nonatomic, copy)GetCellTypeBlock getCellBlock;
+
+
+
+
 
 @end
 
