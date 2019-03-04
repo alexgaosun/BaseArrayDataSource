@@ -9,9 +9,8 @@
 #import "BaseArrayDataSource.h"
 #import "NSObject+TableCellModeSerialize.h"
 @interface BaseArrayDataSource()
-@property (nonatomic, copy) NSArray *cellIdentifiers;                // 多cell样式选择
 @property (nonatomic, copy) NSArray *items;
-
+@property (nonatomic, copy) NSArray *itemSections;
 @property(nonatomic, copy) TableViewCellConfigureBlock configureCellBlock;/**< block */
 @end
 @implementation BaseArrayDataSource
@@ -20,41 +19,70 @@
 }
 
 - (id)initWithItems:(NSArray *)items
-    cellIdentifiers:(NSArray *)cellIdentifiers
  configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock{
     
     self = [super init];
     if (self) {
         self.items = items;
-        self.cellIdentifiers = cellIdentifiers;
+        self.configureCellBlock = aConfigureCellBlock;
+    }
+    return  self;
+}
+
+- (id)initWithItemSections:(NSArray *)itemSections
+        configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock{
+    
+    self = [super init];
+    if (self) {
+        _itemSections= itemSections;
         self.configureCellBlock = aConfigureCellBlock;
     }
     return  self;
 }
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.items[(NSUInteger) indexPath.row];
+    
+    if (_itemSections) {
+        NSArray *itemSection = _itemSections[indexPath.section];
+        return itemSection[(NSUInteger) indexPath.row];
+    }else{
+        return self.items[(NSUInteger) indexPath.row];
+    }
 }
 
 #pragma mark - UITableViewDataSource
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if (_itemSections.count) {
+        return _itemSections.count;
+    }else{
+        return 1;
+    }
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.items.count;
+    if (_itemSections) {
+        if (_itemSections.count) {
+            NSArray *itemSection = _itemSections[section];
+            return itemSection.count;
+        }else{
+            return 0;
+        }
+    }else{
+        if (self.items) {
+            return self.items.count;
+        }else{
+            return 0;
+        }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
-    if (self.cellIdentifiers.count) {
-        id item = [self itemAtIndexPath:indexPath];
-        cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([item configCellTypeModel:item])];
-        if (self.configureCellBlock) {
-            self.configureCellBlock(cell, item);
-        }
-        
-        return cell;
-    }else{
-        return nil;
+    id item = [self itemAtIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([item configCellTypeModel:item])];
+    if (self.configureCellBlock) {
+        self.configureCellBlock(cell, item);
     }
+    return cell;
     
 }
 #pragma mark

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (TableCellModeSerialize)
-- (Class)configCellTypeModel:(id)model;//在Model类中重写此方法,加入业务逻辑
+- (Class)configCellTypeModel:(id)model;//在和Cell匹配的，Model类中重写此方法,加入业务逻辑
 @end
 
 NS_ASSUME_NONNULL_END

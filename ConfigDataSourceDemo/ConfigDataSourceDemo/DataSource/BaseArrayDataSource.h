@@ -20,9 +20,15 @@ typedef NSInteger (^GetCellTypeBlock)(id item);
  };
  */
 @interface BaseArrayDataSource : NSObject<UITableViewDataSource>
+/*
+ items为独立数组，此项可为默认无对象数组
+ */
 - (id)initWithItems:(NSArray *)items
-    cellIdentifiers:(NSArray *)cellIdentifiers
  configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
+
+- (id)initWithItemSections:(NSArray *)itemSections
+    configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock;
+
 
 
 

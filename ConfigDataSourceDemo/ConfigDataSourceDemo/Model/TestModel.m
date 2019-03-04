@@ -9,6 +9,7 @@
 #import "TestModel.h"
 #import "TestOneCell.h"
 #import "TestTwoCell.h"
+#import "TestThreeCell.h"
 @implementation TestModel
 - (Class)configCellTypeModel:(id)model 
 {//通过业务逻辑判断代码，区分Cell类型
@@ -16,6 +17,9 @@
         TestModel *tmpModel = model;
         if (tmpModel.type % 2 == 0) {
             return [TestOneCell class];
+        }else if (tmpModel.type == 5){
+            return [TestThreeCell class];
+            
         }else{
             return [TestTwoCell class];
         }

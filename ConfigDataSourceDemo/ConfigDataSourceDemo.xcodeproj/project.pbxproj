@@ -30,6 +30,7 @@
 		589E32E12227C61C00A05BFF /* BaseArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E02227C61C00A05BFF /* BaseArrayDataSource.m */; };
 		589E32E42227D47300A05BFF /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E32227D47300A05BFF /* TestModel.m */; };
 		589E32E92229083D00A05BFF /* NSObject+TableCellModeSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */; };
+		589E32EC222CB5D000A05BFF /* TestThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32EB222CB5D000A05BFF /* TestThreeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		589E32E32227D47300A05BFF /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		589E32E72229083D00A05BFF /* NSObject+TableCellModeSerialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TableCellModeSerialize.h"; sourceTree = "<group>"; };
 		589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TableCellModeSerialize.m"; sourceTree = "<group>"; };
+		589E32EA222CB5D000A05BFF /* TestThreeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThreeCell.h; sourceTree = "<group>"; };
+		589E32EB222CB5D000A05BFF /* TestThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestThreeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +163,10 @@
 				589E32E52227DC1700A05BFF /* View */,
 				589E32D52227B64200A05BFF /* DataSource */,
 				589E32852227B4A200A05BFF /* Main.storyboard */,
+				589E328E2227B4A400A05BFF /* main.m */,
 				589E32882227B4A400A05BFF /* Assets.xcassets */,
 				589E328A2227B4A400A05BFF /* LaunchScreen.storyboard */,
 				589E328D2227B4A400A05BFF /* Info.plist */,
-				589E328E2227B4A400A05BFF /* main.m */,
 			);
 			path = ConfigDataSourceDemo;
 			sourceTree = "<group>";
@@ -234,6 +237,8 @@
 				589E32D72227B6BF00A05BFF /* TestOneCell.m */,
 				589E32D92227B6CE00A05BFF /* TestTwoCell.h */,
 				589E32DA2227B6CE00A05BFF /* TestTwoCell.m */,
+				589E32EA222CB5D000A05BFF /* TestThreeCell.h */,
+				589E32EB222CB5D000A05BFF /* TestThreeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				589E32DB2227B6CE00A05BFF /* TestTwoCell.m in Sources */,
 				589E32E92229083D00A05BFF /* NSObject+TableCellModeSerialize.m in Sources */,
 				589E32CB2227B4DA00A05BFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				589E32EC222CB5D000A05BFF /* TestThreeCell.m in Sources */,
 				589E32E42227D47300A05BFF /* TestModel.m in Sources */,
 				589E32D42227B4DA00A05BFF /* MASViewAttribute.m in Sources */,
 			);

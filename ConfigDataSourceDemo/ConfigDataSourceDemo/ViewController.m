@@ -12,6 +12,7 @@
 #import "TestTwoCell.h"
 #import "BaseArrayDataSource.h"
 #import "TestModel.h"
+#import "TestThreeCell.h"
 @interface ViewController ()
 @property(nonatomic, strong) NSMutableArray * arr;/**< array */
 @property(nonatomic, strong) BaseArrayDataSource* dateSource;/**< dataSource */
@@ -31,16 +32,25 @@
     }];
     // cell复用设置
     _cellIdentifiers = [[NSMutableArray alloc] init];
-    [_cellIdentifiers addObject:NSStringFromClass([TestOneCell class])];
     [tableView registerClass:[TestOneCell class] forCellReuseIdentifier:NSStringFromClass([TestOneCell class])];
     
-    [_cellIdentifiers addObject:NSStringFromClass([TestTwoCell class])];
+    [tableView registerClass:[TestThreeCell class] forCellReuseIdentifier:NSStringFromClass([TestThreeCell class])];
+    
     [tableView registerClass:[TestTwoCell class] forCellReuseIdentifier:NSStringFromClass([TestTwoCell class])];
+    
 
     TableViewCellConfigureBlock configureCell =^(UITableViewCell *cell, id item) {
         
     };
-    self.dateSource  = [[BaseArrayDataSource alloc] initWithItems:self.arr cellIdentifiers:_cellIdentifiers configureCellBlock:configureCell];
+    NSMutableArray *sections = [NSMutableArray array];
+    [sections addObject:self.arr];
+    [sections addObject:self.arr];
+    [sections addObject:self.arr];
+    
+//    self.dateSource  = [[BaseArrayDataSource alloc] initWithItemSections:sections configureCellBlock:configureCell];
+    
+    self.dateSource  = [[BaseArrayDataSource alloc] initWithItems:self.arr configureCellBlock:configureCell];
+    
     tableView.dataSource = self.dateSource;
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -50,7 +60,7 @@
     
     if (!_arr) {
         _arr = [NSMutableArray array];
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 6; i++) {
             TestModel *tmpModel = [TestModel new];
             tmpModel.type = i;
             [_arr addObject:tmpModel];
