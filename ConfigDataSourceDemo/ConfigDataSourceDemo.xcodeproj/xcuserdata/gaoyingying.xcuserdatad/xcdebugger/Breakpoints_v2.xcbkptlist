@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ConfigDataSourceDemo/ViewController.m"
-            timestampString = "573125598.3739361"
+            filePath = "ConfigDataSourceDemo/Model/TestModel2.m"
+            timestampString = "573380324.813328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-configCellTypeModel:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ConfigDataSourceDemo/Model/TestModel.m"
+            timestampString = "573380324.8134021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-configCellTypeModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

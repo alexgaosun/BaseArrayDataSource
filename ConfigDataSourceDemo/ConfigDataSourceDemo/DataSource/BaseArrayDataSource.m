@@ -14,10 +14,7 @@
 @property(nonatomic, copy) TableViewCellConfigureBlock configureCellBlock;/**< block */
 @end
 @implementation BaseArrayDataSource
-- (instancetype)init {
-    return  nil;
-}
-
+// 初始化
 - (id)initWithItems:(NSArray *)items
  configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock{
     
@@ -39,31 +36,55 @@
     }
     return  self;
 }
-
+#pragma marr getter&setter
+- (void)setItems:(NSArray *)items //数据在经常变动时 及时更新
+{
+    _items = items;
+}
+- (void)setItemSections:(NSArray *)itemSections{
+    _itemSections  = itemSections;
+}
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (_itemSections) {
-        NSArray *itemSection = _itemSections[indexPath.section];
-        return itemSection[(NSUInteger) indexPath.row];
+    if (self.itemSections) {
+        id itemSection = self.itemSections[indexPath.section];
+        if ([itemSection isKindOfClass:[NSArray class]]) {
+            NSArray *itemSectionArr = itemSection;
+            return itemSectionArr[indexPath.row];
+        }else{
+            NSArray *tmpArr = [itemSection configSectionTypeModel:itemSection];
+            if (tmpArr && tmpArr.count) {
+                return tmpArr[indexPath.row];
+            }
+            return nil;
+        }
     }else{
-        return self.items[(NSUInteger) indexPath.row];
+        return self.items[indexPath.row];
     }
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (_itemSections.count) {
+    if (_itemSections) {
         return _itemSections.count;
     }else{
         return 1;
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_itemSections) {
-        if (_itemSections.count) {
-            NSArray *itemSection = _itemSections[section];
-            return itemSection.count;
+    if (self.itemSections.count) {
+        if (self.itemSections.count) {
+            id itemSection = self.itemSections[section];
+            if ([itemSection isKindOfClass:[NSArray class]]) {
+                NSArray *itemSectionArr = itemSection;
+                return itemSectionArr.count;
+            }else{
+                NSArray *tmpArr = [itemSection configSectionTypeModel:itemSection];
+                if (tmpArr && tmpArr.count) {
+                    return tmpArr.count;
+                }
+                return 0;
+            }
         }else{
             return 0;
         }

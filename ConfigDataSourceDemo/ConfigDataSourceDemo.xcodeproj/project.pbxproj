@@ -31,6 +31,7 @@
 		589E32E42227D47300A05BFF /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E32227D47300A05BFF /* TestModel.m */; };
 		589E32E92229083D00A05BFF /* NSObject+TableCellModeSerialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */; };
 		589E32EC222CB5D000A05BFF /* TestThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32EB222CB5D000A05BFF /* TestThreeCell.m */; };
+		589E32F2222D16A200A05BFF /* TestModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E32F1222D16A200A05BFF /* TestModel2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TableCellModeSerialize.m"; sourceTree = "<group>"; };
 		589E32EA222CB5D000A05BFF /* TestThreeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThreeCell.h; sourceTree = "<group>"; };
 		589E32EB222CB5D000A05BFF /* TestThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestThreeCell.m; sourceTree = "<group>"; };
+		589E32F0222D16A200A05BFF /* TestModel2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel2.h; sourceTree = "<group>"; };
+		589E32F1222D16A200A05BFF /* TestModel2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,8 @@
 		589E32D52227B64200A05BFF /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				589E32E72229083D00A05BFF /* NSObject+TableCellModeSerialize.h */,
+				589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */,
 				589E32DF2227C61C00A05BFF /* BaseArrayDataSource.h */,
 				589E32E02227C61C00A05BFF /* BaseArrayDataSource.m */,
 			);
@@ -248,8 +253,8 @@
 			children = (
 				589E32E22227D47300A05BFF /* TestModel.h */,
 				589E32E32227D47300A05BFF /* TestModel.m */,
-				589E32E72229083D00A05BFF /* NSObject+TableCellModeSerialize.h */,
-				589E32E82229083D00A05BFF /* NSObject+TableCellModeSerialize.m */,
+				589E32F0222D16A200A05BFF /* TestModel2.h */,
+				589E32F1222D16A200A05BFF /* TestModel2.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				589E32CB2227B4DA00A05BFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				589E32EC222CB5D000A05BFF /* TestThreeCell.m in Sources */,
 				589E32E42227D47300A05BFF /* TestModel.m in Sources */,
+				589E32F2222D16A200A05BFF /* TestModel2.m in Sources */,
 				589E32D42227B4DA00A05BFF /* MASViewAttribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

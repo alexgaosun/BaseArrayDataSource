@@ -13,4 +13,8 @@
 {
     return nil;
 }
+- (NSArray *)configSectionTypeModel:(id)model
+{
+    return [NSArray array];
+}
 @end
